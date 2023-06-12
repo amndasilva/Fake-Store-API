@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="buscar_produtos_iniciais()">
+    <header>
+        <div id="area-menu">
+            <a href="#" style="text-decoration: none; color: black;"> Minha Conta |</a>
+            <a href="#" style="text-decoration: none; color: black;"> Acompanhar Pedido |</a>
+            <a href="#" style="text-decoration: none; color: black;"> Devoluções |</a>
+            <a href="#" style="text-decoration: none; color: black;"> Ajuda </a>
+        </div>
+    </header>
+    <nav class="navbar">
+        <table style="width: 99vw;">
+            <tr>
+                <th style="text-align: left;"> <img src="./img/logo.png" id="logo" width="200px" height="100px"></th>
+                <!-- <th style="text-align: center; width: 1000px;"> <input type="search" id="barradepesquisa"
+                        placeholder="Pesquise aqui...">
+                    <button class="btnpesquisa"> Pesquisar </button>
+                </th> -->
+                <th style="text-align: left;">
+                    <p> PRODUTOS EM ATÉ 85% OFF </p>
+                </th>
+                <th style="text-align: right; padding-right: 50px; padding-left: 20px; cursor: pointer;"> <img
+                        src="./img/carrinho de compras.png" id="carrinho" width="30px"></th>
+            </tr>
+        </table>
+    </nav>
+    <section style="background-color: pink; padding-left: 20px;">
+        <table>
+            <tr>
+                <th>
+                    <div class="pesquisabanner">
+                        <!-- <form action="#" class="pesquisa">
+                            <h3>BUSCA RÁPIDA</h3>
+                            <p>Encotre aqui o produto ideal</p>
+                            <div id="textfield">
+                                <div id="textfield">
+                                    <select name="" id="pesq">
+                                        <option value="">Tipo</option>
+                                        <option value="">Casual</option>
+                                        <option value="">Esporte Fino</option>
+                                    </select>
+                                </div>
+                                <div id="textfield">
+                                    <select name="" id="pesq">
+                                        <option value="">Marca</option>
+                                        <option value="">Vista-se</option>
+                                        <option value="">Nike</option>
+                                    </select>
+                                </div>
+                                <div id="textfield">
+                                    <select name="" id="pesq">
+                                        <option value="">Categoria</option>
+                                        <option value="">Adulto</option>
+                                        <option value="">Infantil</option>
+                                    </select>
+                                </div>
+                                <div style="padding-left: 18px;">
+                                    <input id="textfield-input" type="text" placeholder="R$ min"
+                                        style="width: 90px; text-align: center; align-items: center;">
+                                    <input id="textfield-input" type="text" placeholder="R$ máx"
+                                        style="width: 90px; text-align: center; align-items: center;">
+                                </div>
+                                <button id="btn-pesquisa-banner" type="submit">Pesquisar</button>
+                            </div>
+                        </form> -->
+                    </div>
+                </th>
+                <th>
+                    <div style="height: 100%; width: 100%" class="col-lg-9">
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active ">
+                                    <img src="./img/slide1.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/slide2.png" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/slide3.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </section>
+    <br>
+    <br>
+    <br>
+    <main>
+        <section>
+            <div class="content2">
+                <div class="pesquisa">
+                    <div class="category">
+                        <select name="opções" id="Seleção">
+                            <option value="Accessories - Accessories">Accessories - Accessories</option>
+                            <option value="Accessories - Bags">Accessories - Bags</option>
+                            <option value="Accessories - Belts">Accessories - Belts</option>
+                            <option value="Accessories - Cufflinks">Accessories - Cufflinks</option>
+                            <option value="Accessories - Eyewear">Accessories - Eyewear</option>
+                            <option value="Accessories - Headwear">Accessories - Headwear</option>
+                            <option value="Accessories - Jewellery">Accessories - Jewellery</option>
+                            <option value="Accessories - Mufflers">Accessories - Mufflers</option>
+                            <option value="Accessories - Perfumes">Accessories - Perfumes</option>
+                            <option value="Accessories - Scarves">Accessories - Scarves</option>
+                            <option value="Accessories - Shoe Accessories">Accessories - Shoe Accessories</option>
+                            <option value="Accessories - Socks">Accessories - Socks</option>
+                            <option value="Accessories - Ties">Accessories - Ties</option>
+                            <option value="Accessories - Wallets">Accessories - Wallets</option>
+                            <option value="Accessories - Watches">Accessories - Watches</option>
+                            <option value="Apparel - Apparel Set">Apparel - Apparel Set</option>
+                            <option value="Apparel - Bottomwear">Apparel - Bottomwear</option>
+                            <option value="Apparel - Innerwear">Apparel - Innerwear</option>
+                            <option value="Apparel - Loungewear and Nightwear">Apparel - Loungewear and Nightwear
+                            </option>
+                            <option value="Apparel - Saree">Apparel - Saree</option>
+                            <option value="Apparel - Topwear">Apparel - Topwear</option>
+                            <option value="Footwear - Flip Flops">Footwear - Flip Flops</option>
+                            <option value="Footwear - Sandal">Footwear - Sandal</option>
+                            <option value="Footwear - Shoes">Footwear - Shoes</option>
+                            <option value="Free Items - Free Gifts">Free Items - Free Gifts</option>
+                            <option value="Personal Care - Bath and Body">Personal Care - Bath and Body</option>
+                            <option value="Personal Care - Beauty Accessories">Personal Care - Beauty Accessories
+                            </option>
+                            <option value="Personal Care - Eyes">Personal Care - Eyes</option>
+                            <option value="Personal Care - Fragrance">Personal Care - Fragrance</option>
+                            <option value="Personal Care - Hair">Personal Care - Hair</option>
+                            <option value="Personal Care - Lips">Personal Care - Lips</option>
+                            <option value="Personal Care - Makeup">Personal Care - Makeup</option>
+                            <option value="Personal Care - Nails">Personal Care - Nails</option>
+                            <option value="Personal Care - Perfumes">Personal Care - Perfumes</option>
+                            <option value="Personal Care - Skin">Personal Care - Skin</option>
+                            <option value="Personal Care - Skin Care">Personal Care - Skin Care</option>
+
+                        </select>
+                        <button onclick="BuscarCategory()"> Buscar Categoria </button>
+                    </div>
+                    <div class="pesquisar">
+                        <input type="text" class="pesquisainput" id="iddapesquisa" placeholder="Pesquise por ID...">
+                        <input type="button" value="Pesquisar" onclick="pesquisaid()" class="btn">
+                    </div>
+                    <div class="Setas">
+                        <!-- <img src="./imgs/SetaEsquerda.png" onclick="Esquerda()"> -->
+                        <label> Pg <span id="Numpag"></span></label>
+                        <!-- <img src="./imgs/SetaDireita.png" onclick="Direita()"> -->
+
+                    </div>
+                </div>
+                <div class="produtos" id="prods">
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <article style="padding-top: 20px;">
+        <table class="NewsLetter">
+            <tr>
+                <th>
+                    <h2 style="text-align: center">
+                        NewsLetter
+                    </h2>
+                    <p style="text-align: center;"> Cadastre-se para receber novidades!</p>
+                    <div style="text-align: center; padding-bottom: 15px;">
+                        <input class="NewsLetter-input" type="e-mail" placeholder="Digite seu e-mail...">
+                        <button class="btn-NewsLetter" type="submit"> Cadastrar </button>
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </article>
+    <footer style="padding-top: 50px; background: whitesmoke;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                    <p> <strong> Métodos de Pagamento </strong> </p>
+                    <img width="30px;" height="30px;" src="img/pagamento-com-cartao-de-credito.png" alt="">
+                    <img width="30px;" height="30px;" src="img/paypal.png" alt="">
+                    <img width="30px;" height="30px;" src="img/forma-de-pagamento.png" alt="">
+                </div>
+                <div class="col">
+                    <p> <strong> Acesso Rápido </strong></p>
+                    <ul style="list-style: none; text-align: left; font-size: 10pt;">
+                        <li><a style="text-decoration:none;" href="#">Ajuda</a></li>
+                        <li><a style="text-decoration:none;" href="#">Política de Envio</a></li>
+                        <li><a style="text-decoration:none;" href="#">Cancelamento</a></li>
+                        <li><a style="text-decoration:none;" href="#">Devoluções</a></li>
+                        <li><a style="text-decoration:none;" href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <p> <strong> Redes Sociais </strong> </p>
+                    <img width="30px;" height="30px;" src="img/whatsapp.png" alt="">
+                    <img width="30px;" height="30px;" src="img/instagram.png" alt="">
+                    <img width="30px;" height="30px;" src="img/facebook.png" alt="">
+                </div>
+                <div class="col">
+                    <p> <strong> Fale Conosco </strong> </p>
+                    <p style="font-size: 10pt;"> Rua Manoel Elias de Aguiar, 245 - Ouro Preto - MG </p>
+                    <img width="30px;" height="30px;" src="img/o-email.png" alt=""> <a style="font-size: 10pt;" href="">
+                        faleconosco@vista-se.com </a> <br>
+                    <img width="30px;" height="30px;" src="img/telefone.png" alt=""> <a style="font-size: 10pt;"
+                        href=""> 31 9 9196 - 8547 </a>
+                </div>
+    </footer>
+
+    </div>
+    </div>
+    </div>
+    <div>
+        <footer style="background: pink;">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <p style="font-size: 16pt; padding-top: 10px; padding-bottom: 0px;"> Amanda Carolina de Jesus
+                            Silva -
+                            Análise e Desenvolvimento de Sistemas - 823169 </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

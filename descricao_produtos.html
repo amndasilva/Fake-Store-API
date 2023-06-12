@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Descrição do Produto </title>
+    <link rel="stylesheet" href="style_descricao.css">
+
+</head>
+
+<body>
+    <div class="Detalhes">
+        <a href="./index.html"><button class="cabeçalho_volta"><img src="./img/return.png" alt=""></button></a>
+        <h1 class="cabeçalho_h1"> Descrição do Produto </h1>
+        <div id="detalhes-produto" class="di_detalhes"></div>
+
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        fetch(`https://diwserver.vps.webdock.cloud/products/${productId}`)
+            .then(response => response.json())
+            .then(data => {
+                const descricao_produto = `
+        
+                    <h3>${data.title}</h3>
+                
+                    <img src="${data.image}" class="img-cards" alt="Product Image">
+                    <h2>Price:<span class="cor_do_preco"> $${data.price}</h2></span>
+                    <p>Description: <strong class="Cor_Descrição">${data.description}</p>  </strong>
+                    <p>Category:<strong class="Cor_Descrição"> ${data.category}</p> </strong>
+                    <p> Cor base: <strong>${data.baseColour}</strong></p>
+                    <p> Ano: <strong>${data.year}</strong></p>
+                    <p> Tipo: <strong>${data.articleType}</strong></p>
+                    
+                `;
+
+                const descricao_produtoContainer = document.getElementById("detalhes-produto");
+                descricao_produtoContainer.innerHTML = descricao_produto;
+            })
+            .catch(error => {
+                console.error('Ocorreu um erro:', error);
+            });
+    </script>
+</body>
+
+</html>
